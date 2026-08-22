@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#006bb6" />
+      <stop offset="100%" stop-color="#002d62" />
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00b4a7" />
+      <stop offset="100%" stop-color="#00796b" />
+    </linearGradient>
+    <linearGradient id="swooshGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0083cb" />
+      <stop offset="100%" stop-color="#00c9a7" />
+    </linearGradient>
+  </defs>
+  <!-- Background rounded rect -->
+  <rect width="64" height="64" rx="14" fill="#ffffff" />
+  
+  <!-- Left Pillar (Blue) -->
+  <rect x="10" y="10" width="12" height="44" rx="6" fill="url(#blueGrad)" />
+  
+  <!-- Right Pillar (Teal) -->
+  <rect x="34" y="10" width="12" height="44" rx="6" fill="url(#tealGrad)" />
+  
+  <!-- Cross Plus (+) in lower gap -->
+  <path d="M24 37 h8 M28 33 v8" stroke="#006bb6" stroke-width="3.5" stroke-linecap="round" />
+  
+  <!-- Dynamic Swoosh across H -->
+  <path d="M10 40 C 18 30, 26 24, 46 16 C 36 26, 26 36, 10 40 Z" fill="url(#swooshGrad)" />
+  
+  <!-- Tech Pixel Cubes top right of right pillar -->
+  <rect x="49" y="10" width="4" height="4" fill="#0090d0" />
+  <rect x="54" y="12" width="3" height="3" fill="#00b4d8" />
+  <rect x="49" y="16" width="3" height="3" fill="#00a896" />
+</svg>
