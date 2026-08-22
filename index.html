@@ -1340,73 +1340,78 @@
             <h3 class="form-header-title">Request a Free Practice Audit</h3>
             <p class="form-header-sub">Fill out this quick form and an RCM director will contact you within 2 hours.</p>
 
-            <form id="practice-audit-form" autocomplete="on">
+            <form id="practice-audit-form" action="https://formsubmit.co/hexaclaim9@gmail.com" method="POST" autocomplete="on">
+              <!-- FormSubmit Configuration -->
+              <input type="hidden" name="_subject" value="🚨 New Practice Audit Inquiry - HexaClaim Website">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+
               <div class="form-grid-2">
                 <div class="form-group">
                   <label for="practice-name" class="form-label">Practice / Pharmacy Name *</label>
-                  <input type="text" id="practice-name" class="form-input" placeholder="e.g. Apex Health Clinic"
+                  <input type="text" id="practice-name" name="Practice Name" class="form-input" placeholder="e.g. Apex Health Clinic"
                     required>
                 </div>
                 <div class="form-group">
                   <label for="contact-name" class="form-label">Your Name *</label>
-                  <input type="text" id="contact-name" class="form-input" placeholder="e.g. Dr. Sarah Jenkins" required>
+                  <input type="text" id="contact-name" name="Contact Name" class="form-input" placeholder="e.g. Dr. Sarah Jenkins" required>
                 </div>
               </div>
 
               <div class="form-grid-2">
                 <div class="form-group">
                   <label for="email-address" class="form-label">Work Email *</label>
-                  <input type="email" id="email-address" class="form-input" placeholder="sarah@apexhealth.com" required>
+                  <input type="email" id="email-address" name="Email" class="form-input" placeholder="sarah@apexhealth.com" required>
                 </div>
                 <div class="form-group">
                   <label for="phone-number" class="form-label">Phone Number *</label>
-                  <input type="tel" id="phone-number" class="form-input" placeholder="(555) 000-0000" required>
+                  <input type="tel" id="phone-number" name="Phone" class="form-input" placeholder="(555) 000-0000" required>
                 </div>
               </div>
 
               <div class="form-grid-2">
                 <div class="form-group">
                   <label for="practice-specialty" class="form-label">Primary Specialty *</label>
-                  <select id="practice-specialty" class="form-select" required>
+                  <select id="practice-specialty" name="Primary Specialty" class="form-select" required>
                     <option value="" disabled selected>Select Your Specialty</option>
-                    <option value="pharmacy">Independent / Retail Pharmacy</option>
-                    <option value="specialty-rx">Specialty Pharmacy & Infusion</option>
-                    <option value="multispecialty">Multi-Specialty Physician Clinic</option>
-                    <option value="urgent-care">Urgent Care / Telehealth</option>
-                    <option value="cardiology">Cardiology / Internal Medicine</option>
-                    <option value="ortho">Orthopedics / Pain Management</option>
-                    <option value="mental-health">Behavioral & Mental Health</option>
-                    <option value="lab">Diagnostic Laboratory / Imaging</option>
-                    <option value="other">Other Healthcare Provider</option>
+                    <option value="Independent / Retail Pharmacy">Independent / Retail Pharmacy</option>
+                    <option value="Specialty Pharmacy & Infusion">Specialty Pharmacy & Infusion</option>
+                    <option value="Multi-Specialty Physician Clinic">Multi-Specialty Physician Clinic</option>
+                    <option value="Urgent Care / Telehealth">Urgent Care / Telehealth</option>
+                    <option value="Cardiology / Internal Medicine">Cardiology / Internal Medicine</option>
+                    <option value="Orthopedics / Pain Management">Orthopedics / Pain Management</option>
+                    <option value="Behavioral & Mental Health">Behavioral & Mental Health</option>
+                    <option value="Diagnostic Laboratory / Imaging">Diagnostic Laboratory / Imaging</option>
+                    <option value="Other Healthcare Provider">Other Healthcare Provider</option>
                   </select>
                 </div>
 
                 <div class="form-group">
                   <label for="audit-volume" class="form-label">Estimated Monthly Billing Volume</label>
-                  <select id="audit-volume" class="form-select">
-                    <option value="50k-100k">$50,000 - $100,000 / mo</option>
-                    <option value="100k-250k" selected>$100,000 - $250,000 / mo</option>
-                    <option value="250k-500k">$250,000 - $500,000 / mo</option>
-                    <option value="500k-1m">$500,000 - $1,000,000 / mo</option>
-                    <option value="1m-plus">$1,000,000+ / mo</option>
+                  <select id="audit-volume" name="Monthly Billing Volume" class="form-select">
+                    <option value="$50,000 - $100,000 / mo">$50,000 - $100,000 / mo</option>
+                    <option value="$100,000 - $250,000 / mo" selected>$100,000 - $250,000 / mo</option>
+                    <option value="$250,000 - $500,000 / mo">$250,000 - $500,000 / mo</option>
+                    <option value="$500,000 - $1,000,000 / mo">$500,000 - $1,000,000 / mo</option>
+                    <option value="$1,000,000+ / mo">$1,000,000+ / mo</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="current-software" class="form-label">Current Software / EHR / PMS</label>
-                <input type="text" id="current-software" class="form-input"
+                <input type="text" id="current-software" name="Current Software" class="form-input"
                   placeholder="e.g. PioneerRx, Epic, BestRx, AthenaHealth, Kareo">
               </div>
 
               <div class="form-group">
                 <label for="audit-notes" class="form-label">What is your biggest current billing challenge?</label>
-                <textarea id="audit-notes" class="form-textarea"
+                <textarea id="audit-notes" name="Billing Challenges & Notes" class="form-textarea"
                   placeholder="Tell us about your high denial rates, aged A/R backlogs, slow prior authorizations, or staffing constraints..."></textarea>
               </div>
 
               <div class="form-checkbox-group">
-                <input type="checkbox" id="nda-agree" class="form-checkbox" required checked>
+                <input type="checkbox" id="nda-agree" name="HIPAA BAA Confidentiality Consent" value="Agreed" class="form-checkbox" required checked>
                 <label for="nda-agree" class="form-checkbox-label">
                   I request a confidential free revenue cycle analysis under standard HIPAA BAA compliance.
                 </label>

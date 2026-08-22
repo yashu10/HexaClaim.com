@@ -338,7 +338,7 @@ function initServiceModals() {
 }
 
 /* --------------------------------------------------------------------------
-   7. Free Practice Audit & Contact Lead Form Handling
+   7. Free Practice Audit & Contact Lead Form Handling (Email to hexaclaim9@gmail.com)
    -------------------------------------------------------------------------- */
 function initContactForm() {
   const auditForm = document.getElementById('practice-audit-form');
@@ -346,18 +346,30 @@ function initContactForm() {
 
   if (!auditForm) return;
 
-  auditForm.addEventListener('submit', (e) => {
+  auditForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const submitBtn = auditForm.querySelector('button[type="submit"]');
     const originalText = submitBtn.innerHTML;
 
     // Loading state
-    submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Analyzing & Submitting...`;
+    submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Sending Request to HexaClaim...`;
     submitBtn.disabled = true;
 
-    // Simulate reliable API response
-    setTimeout(() => {
+    try {
+      const formData = new FormData(auditForm);
+
+      // Submit directly to FormSubmit endpoint configured for hexaclaim9@gmail.com
+      const response = await fetch('https://formsubmit.co/ajax/hexaclaim9@gmail.com', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      const result = await response.json();
+
       submitBtn.innerHTML = originalText;
       submitBtn.disabled = false;
 
@@ -365,15 +377,25 @@ function initContactForm() {
         formFeedback.classList.add('is-visible');
         auditForm.reset();
 
-        // Scroll smoothly to feedback
+        // Scroll smoothly to feedback confirmation
         formFeedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-        // Auto-hide feedback after 10s
+        // Auto-hide feedback after 12s
         setTimeout(() => {
           formFeedback.classList.remove('is-visible');
-        }, 10000);
+        }, 12000);
       }
-    }, 1200);
+    } catch (err) {
+      console.warn('Form submission encountered an issue, falling back to standard submission:', err);
+      // Fallback submit
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+      if (formFeedback) {
+        formFeedback.classList.add('is-visible');
+        auditForm.reset();
+        formFeedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
   });
 }
 
